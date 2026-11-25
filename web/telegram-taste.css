@@ -766,3 +766,5 @@ html[lang="ru"] .customBadgeDescription [lang="en"] {display:none!important}
 .panel{border-color:#7f55aa55}
 .projectDescription{font-size:14px;line-height:1.6;color:#bdaacf;max-width:650px}
 html[lang="ru"] [lang="en"],html[lang="en"] [lang="ru"]{display:none!important}
+/* Language choices remain available while translated content is hidden. */
+html[lang] .langs button[lang]{display:inline-flex!important}
