@@ -15,11 +15,25 @@ DOMAIN = re.compile(r"(?:[a-z0-9-]+\.)+ton")
 BURN_NOTIFICATION = "0x7bdd97de"
 DECIMALS = 9
 HOLDER_LIMIT = 100
+_next_request = {}
+
+
+def pace(api):
+    # Conservative keyless limit from https://docs.tonapi.io/tonapi.
+    # Other docs list 1 RPS; use the stricter published 1 request / 4 seconds.
+    if api != API:
+        return
+    now = time.monotonic()
+    delay = _next_request.get(api, now) - now
+    if delay > 0:
+        time.sleep(delay)
+    _next_request[api] = time.monotonic() + 4.2
 
 
 def fetch(path, attempts=3, *, api=API):
     for attempt in range(attempts):
         try:
+            pace(api)
             request = Request(api + path, headers={"Accept": "application/json", "User-Agent": "JSI-data/1.0"})
             with urlopen(request, timeout=20) as response:
                 return json.load(response)

@@ -43,11 +43,23 @@ jobs:
         id: collect
         continue-on-error: true
         run: python3 -m scripts.refresh_observatory
-      - name: Build and publish verified snapshot
+      - name: Build verified snapshot
         run: |
           python3 build.py
           python3 verify.py
-          python3 scripts/publish_snapshot.py
+      - name: Check mobile and desktop rendering
+        run: |
+          npm install --prefix "$RUNNER_TEMP/observatory-ui" playwright@1.62.1 --no-audit --no-fund
+          CHROME_BIN="$(command -v google-chrome)" NODE_PATH="$RUNNER_TEMP/observatory-ui/node_modules" node tests/browser-ui.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: joystick-ui-checks
+          path: build/ui
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Publish verified snapshot
+        run: python3 scripts/publish_snapshot.py
       - name: Report partial collection
         if: steps.collect.outcome == 'failure'
         run: exit 1
