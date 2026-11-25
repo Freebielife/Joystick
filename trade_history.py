@@ -47,7 +47,7 @@ def refresh(snapshot, now, *, page_budget=4, save=None):
             try:
                 if used > 1:
                     time.sleep(1.05)
-                page = trades.fetch(f"/accounts/{pool}/events?" + urlencode(params))
+                page = trades.pool_page(pool, params)
                 events = page["events"]
                 if not isinstance(events, list):
                     raise ValueError("Malformed history page")

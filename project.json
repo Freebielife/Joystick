@@ -1,0 +1,95 @@
+{
+  "slug": "joystick",
+  "name": "JOYSTICK",
+  "symbol": "JSI",
+  "master": "EQBJpyjYjsZ5xhqClAgaSqVHlgFtsJvclU-93Ah-LequH5uC",
+  "decimals": 9,
+  "github": {
+    "owner": "Freebielife",
+    "repo": "Joystick"
+  },
+  "pools": [
+    {
+      "address": "EQBLX8vWiUk8noyQEUy6ovLokfK6ToP_IVM5aVyaqRuxOQ7I",
+      "dex": "dedust",
+      "quote": "TON",
+      "fee": "0.25%",
+      "evidence": "https://tonapi.io/v2/blockchain/accounts/EQBLX8vWiUk8noyQEUy6ovLokfK6ToP_IVM5aVyaqRuxOQ7I/methods/get_assets"
+    }
+  ],
+  "primary_pool": "EQBLX8vWiUk8noyQEUy6ovLokfK6ToP_IVM5aVyaqRuxOQ7I",
+  "links": {
+    "telegram": "https://t.me/joystickpro"
+  },
+  "services": {
+    "UQD4uGNdB4a3f52mYOZf0x1nCmdd1DAvrLppL0a1cetTYCQx": "Binance",
+    "EQDPfqI17W9lF-3OmAJu92GOn22BoTMdTmW6cY4s0V-ArRRY": "Bybit"
+  },
+  "logo_file": "web/project-logo.webp",
+  "logo_source": "https://trueimages.ru/img/5b/a1/84f01086.png",
+  "logo_origin": "token_metadata",
+  "flag_file": "web/project-flag.webp",
+  "project_description": {
+    "text": "JOYSTICK - это ревардный инвестиционный токен с дивидендами в $TON.",
+    "origin": "token_metadata",
+    "sources": [
+      "https://tonapi.io/v2/jettons/0:49a728d88ec679c61a8294081a4aa54796016db09bdc954fbddc087e2deaae1f"
+    ],
+    "checked_at": "2026-11-25"
+  },
+  "artwork_provenance": {
+    "library_file_id": "libfile_c879d7802c588191929ed41c569d8b20",
+    "note": "User explicitly selected uploaded purple joystick for all project artwork."
+  },
+  "service_provenance": {
+    "0:f8b8635d0786b77f9da660e65fd31d670a675dd4302facba692f46b571eb5360": {
+      "category": "custody",
+      "source": "User-provided attribution, 2026-11-22; ownership not independently verified"
+    },
+    "0:cf7ea235ed6f6517edce98026ef7618e9f6d81a1331d4e65ba718e2cd15f80ad": {
+      "category": "custody",
+      "source": "User-provided attribution, 2026-11-22; ownership not independently verified"
+    }
+  },
+  "flag_source": "User-provided project emoji",
+  "template_repository": "Freebielife/TON-Observatory-Template",
+  "engine_version": "1.3.0",
+  "max_html_bytes": 2500000,
+  "ui": {
+    "holders_initial": 10,
+    "holders_expanded": 20
+  },
+  "methodology": {
+    "valuation": "last observed swap in primary_pool times CURRENT total supply; not circulating market cap",
+    "primary_pool": "EQBLX8vWiUk8noyQEUy6ovLokfK6ToP_IVM5aVyaqRuxOQ7I",
+    "sellers": "sum of successful supported native TON swap sales; service roles excluded",
+    "holders": "balances excluding known services and identified contracts; unclassified accounts may remain until verified",
+    "burns": "accepted burn notifications and zero-address transfers shown as distinct evidence",
+    "usd": "historical TON/USD rate from CoinGecko",
+    "history": "incremental confirmed swaps; missing intervals remain partial",
+    "swaps": "Executed DeDust pool swap logs; gas excluded; initiating sender may be a contract. Vault-to-recipient delivery is not separately traced."
+  },
+  "branding": {
+    "hero": {
+      "origin": "token_metadata",
+      "source": "https://trueimages.ru/img/5b/a1/84f01086.png",
+      "file": "web/project-logo.webp"
+    },
+    "sectionFlag": {
+      "source": "User-provided project emoji",
+      "catalogueKey": null,
+      "emoji": null,
+      "file": "web/project-flag.webp"
+    },
+    "channel": "https://t.me/joystickpro"
+  },
+  "additional_links": {
+    "chat": "https://t.me/joystickchat"
+  },
+  "trade_decoding_note": "DeDust pool transactions are decoded from successful external swap logs 0x9c610de3. Trace-level JettonSwap classification is not required.",
+  "template_commit": "65780137fa12eda7500f48d29c5b261411305274",
+  "trade_sources": [
+    "https://docs.dedust.io/reference/tlb-schemes#event-swap",
+    "https://tonapi.io/v2/blockchain/accounts/EQBLX8vWiUk8noyQEUy6ovLokfK6ToP_IVM5aVyaqRuxOQ7I/transactions"
+  ]
+}
